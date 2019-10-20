@@ -60,7 +60,7 @@ public class FibLoop {
             ThreadCpuStopWatch TrialStopwatch = new ThreadCpuStopWatch(); // for timing an individual trial
 
             //add headers to text file
-            resultsWriter.println("#X(Value)  N(Size)  AverageTime    FibNumber"); // # marks a comment in gnuplot data
+            resultsWriter.println("#X(Value)  N(Size)  AverageTime        FibNumber"); // # marks a comment in gnuplot data
             resultsWriter.flush();
 
             /* for each size of input we want to test: in this case starting small and doubling the size each time */
@@ -129,7 +129,7 @@ public class FibLoop {
         /*Verify merge sort is working*/
         static void verifyFib(int x){
 
-            System.out.println("Testing..." + x + " = " + Fib(x));
+            //System.out.println("Testing..." + x + " = " + Fib(x));
 
 
         }
