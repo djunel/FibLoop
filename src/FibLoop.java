@@ -22,8 +22,6 @@ public class FibLoop {
         static FileWriter resultsFile;
         static PrintWriter resultsWriter;
 
-
-
         public static void main(String[] args) {
             //function to verify it is sorting correctly
 
@@ -65,7 +63,9 @@ public class FibLoop {
 
             /* for each size of input we want to test: in this case starting small and doubling the size each time */
             for(int inputSize=0;inputSize<=Nums; inputSize++) {
+                //test run for fibonacci numbers
                 verifyFib(inputSize);
+
                 // progress message...
                 System.out.println("Running test for input size "+inputSize+" ... ");
 
@@ -129,41 +129,52 @@ public class FibLoop {
         /*Verify merge sort is working*/
         static void verifyFib(int x){
 
-            //System.out.println("Testing..." + x + " = " + Fib(x));
-
-
+            System.out.println("Testing..." + x + " = " + Fib(x));
         }
 
         public static long Fib(int x){
+            /*Declare Variables*/
             long result = 0;
             long temp1 = 0;
             long temp2 = 0;
+            //loop through to x
             for(int i = 0; i <=x; i++){
+                //if number is 0 or 1, result will be 1
                 if(i == 0 || i == 1){
                    result = 1;
+                   //save the last fib number in temp 1 variable
                    temp1 = temp2;
+                   //save the result in temp 2 variable
                    temp2 = result;
                 }
                 else{
+                    //if number is higher than 1, add the last two numbers together
                     result = temp1 + temp2;
-                    //System.out.println(temp1 + " + " + temp2 + " = " + result);
+                    //save the last fib number as temp 1
                     temp1 = temp2;
+                    //save the result as temp 1
                     temp2 = result;
                 }
 
             }
+            //return result
             return result;
         }
 
+        //count the number of bits required for current fib number
         static int countBits(int n)
         {
             int count = 0;
+            //if n == 0, count will be 1
             if(n == 0){
                 count = 1;
             }
+            //loop while n does not equal 0
             while (n != 0)
             {
+                //each loop add 1 to count
                 count++;
+                //shift n to the left by 1
                 n >>= 1;
             }
             //System.out.println("number of bits = " + count);
