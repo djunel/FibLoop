@@ -11,10 +11,10 @@ public class FibLoop {
         /* define constants */
         static long MAXVALUE =  2000000000;
         static long MINVALUE = -2000000000;
-        static int numberOfTrials = 1;
+        static int numberOfTrials = 100;
         static int MAXINPUTSIZE  = (int) Math.pow(1.5,28);
         static int MININPUTSIZE  =  1;
-        static int Nums = 70;
+        static int Nums = 90;
         static long fibResult = 0;
         // static int SIZEINCREMENT =  10000000; // not using this since we are doubling the size each time
 
@@ -55,7 +55,7 @@ public class FibLoop {
             ThreadCpuStopWatch TrialStopwatch = new ThreadCpuStopWatch(); // for timing an individual trial
 
             //add headers to text file
-            resultsWriter.println("#X(Value)  N(Size)  AverageTime        FibNumber"); // # marks a comment in gnuplot data
+            resultsWriter.println("#X(Value)  N(Size)  AverageTime        FibNumber   NumberOfTrials"); // # marks a comment in gnuplot data
             resultsWriter.flush();
 
             /* for each size of input we want to test: in this case starting small and doubling the size each time */
@@ -117,7 +117,7 @@ public class FibLoop {
                 x++;
                 int countingbits = countBits(inputSize);
                 /* print data for this size of input */
-                resultsWriter.printf("%6d %6d %15.2f %20d \n",inputSize, countingbits, averageTimePerTrialInBatch, fibResult); // might as well make the columns look nice
+                resultsWriter.printf("%6d %6d %15.2f %20d %4d\n",inputSize, countingbits, averageTimePerTrialInBatch, fibResult, numberOfTrials); // might as well make the columns look nice
                 resultsWriter.flush();
                 System.out.println(" ....done.");
             }
