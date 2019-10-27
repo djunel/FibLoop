@@ -23,9 +23,6 @@ public class FibLoop {
         static PrintWriter resultsWriter;
 
         public static void main(String[] args) {
-            //function to verify it is sorting correctly
-
-
 
             // run the whole experiment at least twice, and expect to throw away the data from the earlier runs, before java has fully optimized
 
