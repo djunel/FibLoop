@@ -142,7 +142,7 @@ public class FibLoop {
                    //save the last fib number in temp 1 variable
                    temp1 = temp2;
                    //save the result in temp 2 variable
-                   temp2 = result;
+                   temp2 = result;     
                 }
                 else{
                     //if number is higher than 1, add the last two numbers together
